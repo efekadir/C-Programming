@@ -45,6 +45,8 @@ int main(){
 
     printf("\nID: %d\nLocation: %d, %d\nCoins: %d\nWeapon: %s\n", boss.id, boss.loc.x, boss.loc.y, boss.drop.coins, boss.drop.weapon);
     free(boss.name);
+
+    return 0;
 }
 
 void encryptName(char *namePtr){

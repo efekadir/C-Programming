@@ -19,4 +19,6 @@ int main (){
     *t = temp;
 
     printf("After swap: Number 1 = %d and Number 2 = %d", *p, *t);
+
+    return 0;
 }
