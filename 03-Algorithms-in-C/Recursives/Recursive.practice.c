@@ -5,10 +5,10 @@ int energy(int n){
         return 1;
     }
     else if(n == 1){
-         return 2;
+        return 2;
     }
     else if(n == 2){
-         return 3;
+        return 3;
     }
     else if(n == 7){
         return energy(3) + energy(5) + 10;
@@ -23,5 +23,6 @@ int energy(int n){
 
 int main(){
     int n = 6;
+    
     printf("%d", energy(n));
 }

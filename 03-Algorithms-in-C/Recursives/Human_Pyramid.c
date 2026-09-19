@@ -19,9 +19,10 @@ double calculateWeightBackRecursive(int row, int col) {
 
 double calculateWeightBackIterative(int row, int col) {
     double weights[31][31] = {0.0};
+    int r, c;
 
-    for (int r = 0; r <= row; r++) {
-        for (int c = 0; c <= r; c++) {
+    for (r = 0; r <= row; r++) {
+        for (c = 0; c <= r; c++) {
             if (r < row) {
                 double totalWeight = weights[r][c] + 80.0;
                 weights[r + 1][c] += totalWeight / 2.0;
@@ -33,17 +34,17 @@ double calculateWeightBackIterative(int row, int col) {
 }
 
 int main() {
-    int r, c;
-    printf("Satir ve Sutun giriniz: ");
-    scanf("%d %d", &r, &c);
+    int row, col;
+    printf("Enter row and column:: ");
+    scanf("%d %d", &row, &col);
 
-    if (r > 30 || c > r) {
-        printf("Gecersiz giris.\n");
+    if (row < 0 || row > 30 || col < 0 || col > row) {
+        printf("Invalid input.\n");
         return 1;
     }
 
-    printf("Recursive Sonuc: %.2f kg\n", calculateWeightBackRecursive(r, c));
-    printf("Iterative Sonuc: %.2f kg\n", calculateWeightBackIterative(r, c));
+    printf("Recursive result: %.2f kg\n", calculateWeightBackRecursive(row, col));
+    printf("Iterative result: %.2f kg\n", calculateWeightBackIterative(row, col));
 
     return 0;
 }
