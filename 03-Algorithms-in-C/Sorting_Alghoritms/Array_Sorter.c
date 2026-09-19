@@ -14,6 +14,7 @@ void arraySorter(int *array){
         }
     }
 }
+
 void arrayPrinter(int *array, int size){
     int i;
 
@@ -21,9 +22,12 @@ void arrayPrinter(int *array, int size){
         printf("%d ", array[i]);
     }
 }
+
 int main(){
     int array1[SIZE] = {9, 8, 4, 76, 32, 13, 6, 12, 45, 12};
 
     arraySorter(array1);
     arrayPrinter(array1, SIZE);
+
+    return 0;
 }

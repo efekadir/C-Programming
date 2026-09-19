@@ -15,11 +15,14 @@ void arraySorter(int *array){
     }
 
     printf("Sorted array: \n");
+
     for(i = 0; i < SIZE; i++){
         printf("%d ", array[i]);
     }
+
     printf("\n");
 }
+
 int binarySearch(int *array, int key){
     int i, min = 0, max = SIZE - 1, middle = SIZE / 2;
 
@@ -35,10 +38,13 @@ int binarySearch(int *array, int key){
         else{
             return middle;
         }
+        
         middle = (max + min) / 2;
     }
+
     return -1;
 }
+
 int main(){
     int key = 8, array[SIZE] = {3, 4, 6, 8, 5, 9, 0, 1};
 
