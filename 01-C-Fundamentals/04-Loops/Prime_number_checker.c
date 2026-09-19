@@ -10,12 +10,14 @@ int main(){
         printf("%d is not prime.", number);
         return 0;
     }
+    
     for(i = 2; i * i <= number; i++){
         if(number % i == 0){
             isPrime = 0;
             break;
         }
     }
+
     if(isPrime){
         printf("%d is prime.", number);
     }

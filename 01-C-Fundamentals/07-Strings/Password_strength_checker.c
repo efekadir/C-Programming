@@ -34,7 +34,6 @@ int main(){
 
     printf("--------------------------------\n");
 
-
     length = strlen(password);
 
     if(length >= 8){

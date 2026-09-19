@@ -1,7 +1,6 @@
 #include <stdio.h>
 #define BMI_CALCULATE(weight, height) (weight) / (((height) * (height)))
 
-
 int main(){
     float weight;
     float height;

@@ -15,4 +15,6 @@ int main(){
         printf("%c", ((answer & writer) ? '1' : '0'));
         writer >>= 1;
     }
+
+    return 0;
 }

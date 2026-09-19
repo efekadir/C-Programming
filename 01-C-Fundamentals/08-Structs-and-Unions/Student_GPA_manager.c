@@ -18,13 +18,15 @@ void gpaAssigner(Student students[]){
         students[i].gpa = (rand() % 401) / 100.0;
     }
 }
+
 void gpaPrinter(Student students[]){
     int i;
 
     for(i = 0; i < SIZE; i++){
         printf("%d. %-20s: %.2f\n", (i + 1), students[i].name, students[i].gpa);
     }
-}  
+}
+
 float gpaAverageCalculator(Student students[]){
     int i;
     float totalGpa = 0;
@@ -35,6 +37,7 @@ float gpaAverageCalculator(Student students[]){
 
     return totalGpa / SIZE;
 }
+
 int main(){
     printf("Student GPA List:\n\n");
     Student students[SIZE];
@@ -53,4 +56,5 @@ int main(){
     gpaPrinter(students);
     printf("\nThe average is %.2f", gpaAverageCalculator(students));
 
+    return 0;
 }

@@ -1,26 +1,25 @@
 #include <stdio.h>
 
-void insertNumber(int *numArray, int size, int num) {
+void insertNumber(int *numArray, int size, int num){
     numArray[size] = num;
 }
 
-void sortArray(int *numArray, int size) {
+void sortArray(int *numArray, int size){
     int value, i, j;
 
-    for (i = 1; i < size; i++)
-    {
+    for (i = 1; i < size; i++){
         value = numArray[i];
         j = i - 1;
-        while ((j >= 0) && (numArray[j] > value))
-        {
+        while ((j >= 0) && (numArray[j] > value)){
             numArray[j + 1] = numArray[j];
             j--;
         }
+
         numArray[j + 1] = value;
     }
 }
 
-double findMedian(int *numArray, int size) {
+double findMedian(int *numArray, int size){
     sortArray(numArray, size);
 
     int mid = (size - 1) / 2;

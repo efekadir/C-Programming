@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int main(){
     enum months{JANUARY = 1, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER}monthNumber;
 

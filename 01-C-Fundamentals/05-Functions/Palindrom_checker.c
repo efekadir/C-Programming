@@ -28,7 +28,6 @@ int main(){
     }
     else{
         printf("%s is not palindrome.", text);
-
     }
 
     return 0;

@@ -18,8 +18,10 @@ void letterCounter(char text[], int n){
             currentLetterAmount = 1;
         }
     }
+
     printf("%d%c", currentLetterAmount, text[n - 1]);
 }
+
 int main(){
     char text[SIZE];
 
