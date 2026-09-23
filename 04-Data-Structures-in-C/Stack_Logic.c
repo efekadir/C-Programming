@@ -34,7 +34,7 @@ void show_data(Node* head){
 void insert_data(Node** head, int newData){
     Node* newPtr = malloc(sizeof(Node));
     newPtr -> data = newData;
-    newPtr->nextPtr = NULL;
+    newPtr -> nextPtr = NULL;
 
     if(*head == NULL){
         *head = newPtr;
@@ -54,8 +54,31 @@ void insert_data(Node** head, int newData){
     show_data(*head);
 }
 
-void delete_data(Node* head){
-    
+void delete_data(Node** head){
+    Node* currentPtr = *head;
+    Node* previousPtr = NULL;
+
+    if(currentPtr == NULL){
+        printf("There is no any data to delete.");
+        return;
+    }
+
+    if(currentPtr -> nextPtr == NULL){
+        free(currentPtr);
+        *head = NULL;
+        show_data(*head);
+        return;
+    }
+
+    while(currentPtr -> nextPtr != NULL){
+        previousPtr = currentPtr;
+        currentPtr = currentPtr -> nextPtr;
+    }
+
+    free(currentPtr);
+    previousPtr -> nextPtr = NULL;
+
+    show_data(*head);
 }
 
 int main(){
@@ -71,9 +94,9 @@ int main(){
             insert_data(&head, new_data);
         }
         else if(option == 2){
-            delete_data(head);
+            delete_data(&head);
         }
-        else if(option == 3){
+        else if(option == 3){ 
             show_data(head);
         }
         else if(option == 4){
