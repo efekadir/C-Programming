@@ -61,8 +61,6 @@ void insert_data(Node** head, int newData){
 }
 
 void delete_data(Node** head){
-    Node* previousPtr = NULL;
-
     if(*head == NULL){
         printf("There is no any data to delete.");
         return;
@@ -74,7 +72,8 @@ void delete_data(Node** head){
         show_data(*head);
         return;
     }
-
+    
+    Node* previousPtr = NULL;
     Node* currentPtr = *head;
 
     while(currentPtr -> nextPtr != NULL){
