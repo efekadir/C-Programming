@@ -36,6 +36,7 @@ void insert_data(Node** head, int newData){
 
     if(newPtr == NULL){
         printf("Memory allocation failed.\n");
+        
         return;
     }
 
@@ -70,6 +71,7 @@ void delete_data(Node** head){
         free(*head);
         *head = NULL;
         show_data(*head);
+
         return;
     }
     

@@ -42,14 +42,6 @@ void push(Node** top, int newData){
 
     newPtr -> data = newData;
 
-    if(*top == NULL){
-        *top = newPtr;
-        newPtr -> nextPtr = NULL;
-        show_data(*top);
-        
-        return;
-    }
-
     newPtr -> nextPtr = *top;
     *top = newPtr;
 
@@ -62,13 +54,6 @@ void pop(Node** top){
         return;
     }
 
-    if((*top) -> nextPtr == NULL){
-        free(*top);
-        *top = NULL;
-        show_data(*top);
-        return;
-    }
-    
     Node* temp = *top;
     *top = (*top) -> nextPtr;
 
