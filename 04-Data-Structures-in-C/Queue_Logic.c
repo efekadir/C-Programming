@@ -74,14 +74,23 @@ void dequeue(Node** front, Node** rear){
     show_data(*front);
 }
 
+void peek(Node* front){
+    if(front == NULL){
+        printf("No data.");
+
+        return;
+    }
+    
+    printf("The first data is: %d", front -> data);
+}
+
 int main(){
     Node* front = NULL;
     Node* rear = NULL;
     int option, new_data;
 
     while (1){
-        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show data\n4) Exit\n");
-        scanf("%d", &option);
+        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show data\n4) Peek data\n5) Exit\n");        scanf("%d", &option);
 
         if(option == 1){
             new_data = ask_data();
@@ -93,7 +102,10 @@ int main(){
         else if(option == 3){ 
             show_data(front);
         }
-        else if(option == 4){
+        else if(option == 4){ 
+            peek(front);
+        }
+        else if(option == 5){
             exit(0);
         }
         else{
