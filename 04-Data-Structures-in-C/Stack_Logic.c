@@ -51,6 +51,7 @@ void push(Node** top, int newData){
 void pop(Node** top){
     if(*top == NULL){
         printf("There is no any data to delete.");
+
         return;
     }
 
@@ -62,12 +63,22 @@ void pop(Node** top){
     show_data(*top);
 }
 
+void peek(Node* top){
+    if(top == NULL){
+        printf("No data.");
+
+        return;
+    }
+    
+    printf("The first data is: %d", top -> data);
+}
+
 int main(){
     Node* top = NULL;
     int option, new_data;
 
     while (1){
-        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show data\n4) Exit\n");
+        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show data\n4) Peek data\n5) Exit\n");
         scanf("%d", &option);
 
         if(option == 1){
@@ -81,6 +92,9 @@ int main(){
             show_data(top);
         }
         else if(option == 4){
+            peek(top);
+        }
+        else if(option == 5){
             exit(0);
         }
         else{
