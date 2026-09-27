@@ -95,6 +95,7 @@ int main(){
             peek(top);
         }
         else if(option == 5){
+            
             exit(0);
         }
         else{
