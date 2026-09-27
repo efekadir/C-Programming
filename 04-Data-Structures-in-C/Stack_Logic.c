@@ -33,6 +33,12 @@ void show_data(Node* head){
 
 void insert_data(Node** head, int newData){
     Node* newPtr = malloc(sizeof(Node));
+
+    if(newPtr == NULL){
+        printf("Memory allocation failed.\n");
+        return;
+    }
+
     newPtr -> data = newData;
     newPtr -> nextPtr = NULL;
 
@@ -55,20 +61,21 @@ void insert_data(Node** head, int newData){
 }
 
 void delete_data(Node** head){
-    Node* currentPtr = *head;
     Node* previousPtr = NULL;
 
-    if(currentPtr == NULL){
+    if(*head == NULL){
         printf("There is no any data to delete.");
         return;
     }
 
-    if(currentPtr -> nextPtr == NULL){
-        free(currentPtr);
+    if((*head) -> nextPtr == NULL){
+        free(*head);
         *head = NULL;
         show_data(*head);
         return;
     }
+
+    Node* currentPtr = *head;
 
     while(currentPtr -> nextPtr != NULL){
         previousPtr = currentPtr;
@@ -86,7 +93,7 @@ int main(){
     int option, new_data;
 
     while (1){
-        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show datas\n4) Exit\n");
+        printf("\n\nChoose option:\n1) Insert data\n2) Delete data\n3) Show data\n4) Exit\n");
         scanf("%d", &option);
 
         if(option == 1){
