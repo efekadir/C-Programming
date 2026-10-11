@@ -33,6 +33,13 @@ void show_data(Node* head){
 
 void insert_data(Node** head, int data){
     Node* newPtr = malloc(sizeof(Node));
+
+    if(newPtr == NULL){
+        printf("Memory could not allocate.");
+
+        return;
+    }
+
     newPtr -> data = data;
     newPtr -> nextPtr = NULL;
 
@@ -78,7 +85,9 @@ void delete_data(Node** head){
     scanf("%d", &delete_data);
 
     if((*head) -> data == delete_data){
+        Node* temp = *head;
         *head = (*head) -> nextPtr;
+        free(temp);
         show_data(*head);
 
         return;
