@@ -38,13 +38,15 @@ void insert_data(Node** head, int data){
 
     if(*head == NULL){
         *head = newPtr;
+        show_data(*head);
 
         return;
     }
 
-    if((*head) -> data > data){
+    if((*head) -> data >= data){
         newPtr -> nextPtr = *head;
         *head = newPtr;
+        show_data(*head);
 
         return;
     }
@@ -63,12 +65,18 @@ void insert_data(Node** head, int data){
     show_data(*head);
 }
 
+int delete_data(Node** head){
+    while (1){
+        printf("Enter a data to delete: ");
+    }
+}
+
 int main(){
     Node* head = NULL;
     int option, data;
 
     while(1){
-        printf("Choose an option: ");
+        printf("Choose an option: \n1) Insert data\n2) Delete data\n3) Show data\n4) Exit\n");
         scanf("%d", &option);
 
         if(option == 1){
@@ -76,7 +84,7 @@ int main(){
             insert_data(&head, data);
         }
         else if(option == 2){
- //           delete_data();
+            delete_data(&head);
         }
         else if(option == 3){
             show_data(head);
