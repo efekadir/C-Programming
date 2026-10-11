@@ -28,7 +28,7 @@ void show_data(Node* head){
         currentPtr = currentPtr -> nextPtr;
     }while(currentPtr != NULL);
 
-    printf("NULL\n");
+    printf("NULL\n\n");
 }
 
 void insert_data(Node** head, int data){
@@ -65,9 +65,45 @@ void insert_data(Node** head, int data){
     show_data(*head);
 }
 
-int delete_data(Node** head){
-    while (1){
-        printf("Enter a data to delete: ");
+void delete_data(Node** head){
+    int delete_data;
+
+    if(*head == NULL){
+        printf("No data to delete.\n\n");
+
+        return;
+    }
+
+    printf("Enter a data to delete: ");
+    scanf("%d", &delete_data);
+
+    if((*head) -> data == delete_data){
+        *head = (*head) -> nextPtr;
+        show_data(*head);
+
+        return;
+    }
+
+    Node* currentPtr = *head;
+    Node* previousPtr = NULL;
+
+    while(currentPtr != NULL && currentPtr -> data != delete_data){
+        previousPtr = currentPtr;
+        currentPtr = currentPtr -> nextPtr;
+    }
+
+    if(currentPtr == NULL){
+        printf("Data could not find.\n\n");
+
+        return;
+    }
+
+    if(currentPtr -> data == delete_data){
+        Node* temp = currentPtr;
+        currentPtr = currentPtr -> nextPtr;
+        previousPtr -> nextPtr = currentPtr;
+        free(temp);
+        show_data(*head);
     }
 }
 
